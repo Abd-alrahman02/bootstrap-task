@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings - Payment</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url("images/visacard1.jpg") center / cover no-repeat fixed;
+    }
+
+    .page-title {
+      font-size: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+    }
+
+    .btn-remove {
+      --bs-btn-color: #7f4ddb;
+      --bs-btn-hover-color: #5f2fc0;
+      --bs-btn-active-color: #5f2fc0;
+    }
+
+    .btn-add {
+      --bs-btn-bg: #00b050;
+      --bs-btn-border-color: #00b050;
+      --bs-btn-hover-bg: #009a46;
+      --bs-btn-hover-border-color: #009a46;
+      --bs-btn-active-bg: #008a3f;
+      --bs-btn-active-border-color: #008a3f;
+    }
+
+    .settings-card {
+      border-radius: 16px;
+    }
+
+    .form-control {
+      border-radius: 8px;
+    }
+
+    .btn-add {
+      border-radius: 6px;
+    }
+
+    .card-icon {
+      font-size: 38px;
+      width: 56px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <div class="row min-vh-100 align-items-center justify-content-center py-4">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-7">
+        <div class="settings-card bg-white p-4 p-sm-5">
+
+          <!-- Heading -->
+          <div class="text-center mb-4">
+            <h1 class="page-title fw-bold mb-1">Settings</h1>
+            <p class="section-title fw-bold mb-0">Payment</p>
+          </div>
+
+          <h2 class="section-title fw-bold mb-3">Saved cards:</h2>
+
+          <!-- Mastercard -->
+          <div class="d-flex flex-wrap flex-sm-nowrap align-items-center gap-3 mb-3">
+            <i class="fa-brands fa-cc-mastercard card-icon"></i>
+            <div class="position-relative flex-grow-1">
+              <label for="savedCard1" class="position-absolute top-0 start-0 translate-middle-y ms-3 px-1 bg-white text-secondary small lh-1">Card Number</label>
+              <input type="text" id="savedCard1" class="form-control py-3" value="**** **** **** 3193" readonly>
+            </div>
+            <button type="button" class="btn btn-link btn-remove fw-bold text-decoration-none text-nowrap p-0 ms-auto ms-sm-0">Remove card</button>
+          </div>
+
+          <!-- Visa -->
+          <div class="d-flex flex-wrap flex-sm-nowrap align-items-center gap-3 mb-4">
+            <i class="fa-brands fa-cc-visa card-icon"></i>
+            <div class="position-relative flex-grow-1">
+              <label for="savedCard2" class="position-absolute top-0 start-0 translate-middle-y ms-3 px-1 bg-white text-secondary small lh-1">Card Number</label>
+              <input type="text" id="savedCard2" class="form-control py-3" value="**** **** **** 4296" readonly>
+            </div>
+            <button type="button" class="btn btn-link btn-remove fw-bold text-decoration-none text-nowrap p-0 ms-auto ms-sm-0">Remove card</button>
+          </div>
+
+          <!-- Add new card -->
+          <h2 class="section-title fw-bold mb-3">Add new card:</h2>
+
+          <form>
+            <div class="position-relative mb-3">
+              <label for="cardName" class="position-absolute top-0 start-0 translate-middle-y ms-3 px-1 bg-white text-secondary small lh-1">Cardholder's Name</label>
+              <input type="text" id="cardName" class="form-control py-3" placeholder="Abdelrahman Jarrah" autocomplete="cc-name">
+            </div>
+
+            <div class="row g-3">
+              <div class="col-12 col-sm-6">
+                <div class="position-relative">
+                  <label for="cardNumber" class="position-absolute top-0 start-0 translate-middle-y ms-3 px-1 bg-white text-secondary small lh-1">Card Number</label>
+                  <input type="text" id="cardNumber" class="form-control py-3" placeholder="XXXX XXXX XXXX XXXX" inputmode="numeric" maxlength="19" autocomplete="cc-number">
+                </div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="position-relative">
+                  <label for="cardExpire" class="position-absolute top-0 start-0 translate-middle-y ms-3 px-1 bg-white text-secondary small lh-1">Expire</label>
+                  <input type="text" id="cardExpire" class="form-control py-3" placeholder="MM/YY" maxlength="5" autocomplete="cc-exp">
+                </div>
+              </div>
+              <div class="col-6 col-sm-3">
+                <div class="position-relative">
+                  <label for="cardCvv" class="position-absolute top-0 start-0 translate-middle-y ms-3 px-1 bg-white text-secondary small lh-1">CVV</label>
+                  <input type="password" id="cardCvv" class="form-control py-3" placeholder="***" inputmode="numeric" maxlength="3" autocomplete="cc-csc">
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-lg btn-add w-100 py-3 mt-4 fw-semibold text-uppercase">Add card</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
